@@ -11,7 +11,7 @@ $color_10: #ffa76e;
 $color_11: #e80368;
 $color_12: #ffbb2c;
 $color_13: #ff5828;
-$color_14: #11dbcf;
+$color_14: #4fe3c3;
 $color_15: #111;
 $color_16: #999;
 $color_17: #90c8fc;
@@ -24,6 +24,7 @@ $border-color_1: #fff;
 $border-top-color_1: #fff;
 $border-top-color_2: #eee;
 $border-bottom-color_1: #fff;
+$border-radius: .25rem;
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -31,6 +32,10 @@ $border-bottom-color_1: #fff;
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100;300;400&display=swap');
+
+
 @-webkit-keyframes animate-preloader {
 	0% {
 		transform: rotate(0deg);
@@ -227,7 +232,7 @@ h6 {
 	}
 	.active {
 		color: $color_4;
-		background: #0563bb;
+		background: $color_14;
 		&:focus {
 			color: $color_4;
 			background: #0563bb;
@@ -243,7 +248,7 @@ h6 {
 		&:hover {
 			>a {
 				color: $color_4;
-				background: #0563bb;
+				background: $color_14;
 				width: 100%;
 				color: $color_4;
 				span {
@@ -288,11 +293,20 @@ h6 {
 	background: url("../img/hero-bg.jpg") top right no-repeat;
 	background-size: cover;
 	position: relative;
-	background-attachment: fixed;
+	
+
+	@supports (-webkit-touch-callout: none) {
+		/* CSS specific to iOS devices */ 
+	}
+	
+	@supports not (-webkit-touch-callout: none) {
+		/* CSS for other than iOS devices */ 
+		background-attachment: fixed;
+	}
 	
 	&:before {
 		content: "";
-		background: rgba(255, 255, 255, 0.8);
+		background: rgba(255, 255, 255, 0.7);
 		position: absolute;
 		bottom: 0;
 		top: 0;
@@ -306,6 +320,8 @@ h6 {
 		font-weight: 700;
 		line-height: 56px;
 		color: $color_5;
+		font-family: 'Josefin Slab', serif;
+		color: $color_1;
 	}
 	p {
 		color: $color_5;
@@ -313,8 +329,11 @@ h6 {
 		font-size: 26px;
 		font-family: $font-family_3;
 		span {
-			color: $color_2;
+			color: $color_14;
 			letter-spacing: 1px;
+			background-color: #ffffff;
+			padding: 0 0.25rem;
+			border-radius: 0.25rem;
 		}
 	}
 	.social-links {
@@ -322,18 +341,26 @@ h6 {
 		a {
 			font-size: 24px;
 			display: inline-block;
-			color: $color_5;
+			background: $color_4;
+			color: $color_14;
 			line-height: 1;
-			margin-right: 20px;
+			padding: 6px 0;
+			margin-right: 4px;
+			border-radius: 50%;
+			text-align: center;
+			width: 36px;
+			height: 36px;
 			transition: 0.3s;
 			&:hover {
-				color: $color_2;
+				background: $color_14;
+				color: $color_4;
+				text-decoration: none;
 			}
 		}
 	}
 	&:hover {
 		&:before {
-			background: rgba(255, 255, 255, 0.2);
+			background: rgba(255, 255, 255, 0.5);
 		}
 		
 	}
@@ -343,7 +370,7 @@ section {
 	overflow: hidden;
 }
 .section-title {
-	text-align: center;
+	// text-align: center;
 	padding-bottom: 30px;
 	h2 {
 		font-size: 32px;
@@ -1040,14 +1067,14 @@ section {
 			padding: 10px 12px;
 		}
 		button[type=submit] {
-			background: #0563bb;
+			background: $color_14;
 			border: 0;
 			padding: 10px 35px;
 			color: $color_4;
 			transition: 0.4s;
 			border-radius: 50px;
 			&:hover {
-				background: #0678e3;
+				background: darken($color_14, 30%)
 			}
 		}
 	}
@@ -1160,4 +1187,9 @@ section {
 			line-height: 24px;
 		}
 	}
+}
+
+
+.hide {
+	display: none;
 }

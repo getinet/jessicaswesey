@@ -11,7 +11,7 @@ $color_10: #ffa76e;
 $color_11: #e80368;
 $color_12: #ffbb2c;
 $color_13: #ff5828;
-$color_14: #4fe3c3;
+$brand-teal: #4fe3c3;
 $color_15: #111;
 $color_16: #999;
 $color_17: #90c8fc;
@@ -24,7 +24,7 @@ $border-color_1: #fff;
 $border-top-color_1: #fff;
 $border-top-color_2: #eee;
 $border-bottom-color_1: #fff;
-$border-radius: .25rem;
+$border-radius: .5rem;
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -109,7 +109,7 @@ h6 {
 	right: 15px;
 	bottom: 15px;
 	z-index: 996;
-	background: #0563bb;
+	background: $color_6;
 	width: 40px;
 	height: 40px;
 	border-radius: 50px;
@@ -120,7 +120,7 @@ h6 {
 		line-height: 0;
 	}
 	&:hover {
-		background: #0678e3;
+		background: $brand-teal;
 		color: $color_4;
 	}
 }
@@ -232,10 +232,10 @@ h6 {
 	}
 	.active {
 		color: $color_4;
-		background: $color_14;
+		background: $brand-teal;
 		&:focus {
 			color: $color_4;
-			background: #0563bb;
+			background: $brand-teal;
 			span {
 				color: $color_4;
 			}
@@ -248,7 +248,7 @@ h6 {
 		&:hover {
 			>a {
 				color: $color_4;
-				background: $color_14;
+				background: $brand-teal;
 				width: 100%;
 				color: $color_4;
 				span {
@@ -329,7 +329,7 @@ h6 {
 		font-size: 26px;
 		font-family: $font-family_3;
 		span {
-			color: $color_14;
+			color: $brand-teal;
 			letter-spacing: 1px;
 			background-color: #ffffff;
 			padding: 0 0.25rem;
@@ -342,7 +342,7 @@ h6 {
 			font-size: 24px;
 			display: inline-block;
 			background: $color_4;
-			color: $color_14;
+			color: $brand-teal;
 			line-height: 1;
 			padding: 6px 0;
 			margin-right: 4px;
@@ -352,7 +352,7 @@ h6 {
 			height: 36px;
 			transition: 0.3s;
 			&:hover {
-				background: $color_14;
+				background: $brand-teal;
 				color: $color_4;
 				text-decoration: none;
 			}
@@ -388,7 +388,7 @@ section {
 			height: 1px;
 			background: #ddd;
 			bottom: 1px;
-			left: calc(50% - 60px);
+			// left: calc(50% - 60px);
 		}
 		&::after {
 			content: "";
@@ -396,9 +396,9 @@ section {
 			display: block;
 			width: 40px;
 			height: 3px;
-			background: #0563bb;
+			background: $brand-teal;
 			bottom: 0;
-			left: calc(50% - 20px);
+			// left: calc(50% - 20px);
 		}
 	}
 	p {
@@ -406,6 +406,20 @@ section {
 	}
 }
 .about {
+	width: 100%;
+	// height: 50vh;
+	// background: url("../img/IMG_20200502_123134_001-scaled.jpg") top right no-repeat;
+	background-size: cover;
+	position: relative;
+	background-position: center center;
+	@supports (-webkit-touch-callout: none) {
+		/* CSS specific to iOS devices */ 
+	}
+	
+	@supports not (-webkit-touch-callout: none) {
+		/* CSS for other than iOS devices */ 
+		background-attachment: fixed;
+	}
 	.content {
 		h3 {
 			font-weight: 700;
@@ -709,9 +723,9 @@ section {
 			.swiper-pagination-bullet {
 				width: 12px;
 				height: 12px;
-				background-color: $background-color_2;
+				background-color: $brand-teal;
 				opacity: 1;
-				border: 1px solid #0563bb;
+				border: 1px solid $brand-teal;
 			}
 			.swiper-pagination-bullet-active {
 				background-color: $background-color_1;
@@ -756,6 +770,7 @@ section {
 		transition: all ease-in-out 0.3s;
 		background: #fff;
 		box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
+		width: 100%;
 		.icon {
 			margin: 0 auto;
 			width: 100px;
@@ -793,10 +808,13 @@ section {
 			line-height: 24px;
 			font-size: 14px;
 			margin-bottom: 0;
+			// min-width: 220px;
 		}
 		&:hover {
 			border-color: $border-color_1;
 			box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+			border-radius: 1rem;
+			background-color: $brand-teal;
 		}
 	}
 	.iconbox-blue {
@@ -876,7 +894,7 @@ section {
 	}
 	.iconbox-teal {
 		i {
-			color: $color_14;
+			color: $brand-teal;
 		}
 		&:hover {
 			.icon {
@@ -947,7 +965,7 @@ section {
 			height: 12px;
 			background-color: $background-color_2;
 			opacity: 1;
-			border: 1px solid #0563bb;
+			border: 1px solid $brand-teal;
 		}
 		.swiper-pagination-bullet-active {
 			background-color: $background-color_1;
@@ -960,7 +978,7 @@ section {
 		background: #fff;
 		i {
 			font-size: 20px;
-			color: $color_2;
+			color: $brand-teal;
 			float: left;
 			width: 44px;
 			height: 44px;
@@ -988,7 +1006,7 @@ section {
 			margin-top: 40px;
 			&:hover {
 				i {
-					background: #0563bb;
+					background: $brand-teal;
 					color: $color_4;
 				}
 			}
@@ -997,7 +1015,7 @@ section {
 			margin-top: 40px;
 			&:hover {
 				i {
-					background: #0563bb;
+					background: $brand-teal;
 					color: $color_4;
 				}
 			}
@@ -1005,7 +1023,7 @@ section {
 		.address {
 			&:hover {
 				i {
-					background: #0563bb;
+					background: $brand-teal;
 					color: $color_4;
 				}
 			}
@@ -1067,14 +1085,14 @@ section {
 			padding: 10px 12px;
 		}
 		button[type=submit] {
-			background: $color_14;
+			background: $brand-teal;
 			border: 0;
 			padding: 10px 35px;
 			color: $color_4;
 			transition: 0.4s;
 			border-radius: 50px;
 			&:hover {
-				background: darken($color_14, 30%)
+				background: darken($brand-teal, 30%)
 			}
 		}
 	}
@@ -1104,7 +1122,7 @@ section {
 		a {
 			font-size: 18px;
 			display: inline-block;
-			background: #0563bb;
+			background: $brand-teal;
 			color: $color_4;
 			line-height: 1;
 			padding: 8px 0;
@@ -1115,7 +1133,7 @@ section {
 			height: 36px;
 			transition: 0.3s;
 			&:hover {
-				background: #0678e3;
+				background: darken($brand-teal, 30%);
 				color: $color_4;
 				text-decoration: none;
 			}
@@ -1189,7 +1207,15 @@ section {
 	}
 }
 
+.typed-cursor {
+	background-color: transparent !important;
+}
+
 
 .hide {
 	display: none;
+}
+
+img {
+	border-radius: $border-radius;
 }
